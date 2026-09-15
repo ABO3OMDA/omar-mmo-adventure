@@ -3,96 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmed & Omar &bull; The MMO Plan</title>
+  <title>Ahmed & Omar &bull; The MMO Master Plan</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cinzel+Decorative:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;800&display=swap');
 
     :root {
-      --bg: #09090c;
-      --card: #121217;
-      --card-border: rgba(160, 120, 70, 0.18);
-      --amber: #d97706;
-      --amber-light: #fbbf24;
-      --ruby: #991b1b;
-      --stone-text: #d6d3d1;
-      --stone-muted: #8b8782;
+      --bg: #07080c;
+      --card-bg: rgba(15, 17, 24, 0.9);
+      --card-border: rgba(217, 119, 6, 0.25);
+      --gold-ember: #f59e0b;
+      --blood-ruby: #e11d48;
+      --cyan-aion: #00e5ff;
+      --emerald-gw2: #10b981;
     }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg);
-      color: var(--stone-text);
+      color: #e2e8f0;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(153, 27, 27, 0.1) 0%, transparent 60%),
-        radial-gradient(circle at 85% 25%, rgba(217, 119, 6, 0.06) 0%, transparent 50%),
-        linear-gradient(to bottom, #070709, #0d0d12, #07070a);
+        radial-gradient(circle at 50% -10%, rgba(225, 29, 72, 0.18) 0%, transparent 60%),
+        radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 15% 40%, rgba(0, 229, 255, 0.08) 0%, transparent 50%),
+        linear-gradient(to bottom, #06070a, #0b0d14, #050608);
       background-attachment: fixed;
       min-height: 100vh;
     }
 
     .font-cinzel { font-family: 'Cinzel', serif; }
+    .font-cinzel-dec { font-family: 'Cinzel Decorative', cursive; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
 
-    .gothic-box {
-      background: rgba(17, 17, 23, 0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid var(--card-border);
-      box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.75);
+    /* Eye-Catching Glowing Glass Panels */
+    .glass-card {
+      background: linear-gradient(160deg, rgba(20, 23, 34, 0.9), rgba(12, 14, 20, 0.95));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
 
-    .card-hover {
-      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    .card-glow-hover {
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .card-hover:hover {
-      border-color: rgba(217, 119, 6, 0.4);
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px -10px rgba(217, 119, 6, 0.15);
+    .card-glow-hover:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 20px 45px -10px rgba(245, 158, 11, 0.25), inset 0 0 25px rgba(245, 158, 11, 0.04);
     }
 
-    /* Ambient Bonfire Pulse */
-    @keyframes bonfireBar {
-      0%, 100% { height: 3px; }
-      50% { height: 16px; }
+    .glow-gold-text {
+      color: #fbbf24;
+      text-shadow: 0 0 25px rgba(245, 158, 11, 0.5), 0 0 50px rgba(245, 158, 11, 0.2);
     }
-    .flame-1 { animation: bonfireBar 1.2s ease-in-out infinite; }
-    .flame-2 { animation: bonfireBar 0.9s ease-in-out infinite 0.2s; }
-    .flame-3 { animation: bonfireBar 1.4s ease-in-out infinite 0.4s; }
-    .flame-4 { animation: bonfireBar 1.0s ease-in-out infinite 0.1s; }
-    .flame-5 { animation: bonfireBar 1.3s ease-in-out infinite 0.3s; }
 
-    ::-webkit-scrollbar { width: 7px; }
-    ::-webkit-scrollbar-track { background: #08080a; }
-    ::-webkit-scrollbar-thumb { background: #262630; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #d97706; }
+    /* Animated Bonfire Bars */
+    @keyframes barDance {
+      0%, 100% { height: 4px; }
+      50% { height: 18px; }
+    }
+    .flame-1 { animation: barDance 1.1s ease-in-out infinite; }
+    .flame-2 { animation: barDance 0.8s ease-in-out infinite 0.2s; }
+    .flame-3 { animation: barDance 1.3s ease-in-out infinite 0.4s; }
+    .flame-4 { animation: barDance 0.9s ease-in-out infinite 0.1s; }
+    .flame-5 { animation: barDance 1.2s ease-in-out infinite 0.3s; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #07080c; }
+    ::-webkit-scrollbar-thumb { background: #1f2433; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
   </style>
 </head>
-<body class="p-3 md:p-8 selection:bg-amber-800 selection:text-white">
+<body class="p-3 md:p-8 selection:bg-amber-600 selection:text-black">
 
-  <!-- TOP AUDIO BAR (FIRELINK SHRINE / TAVERN AMBIENCE) -->
-  <div class="max-w-5xl mx-auto mb-6 sticky top-3 z-50">
-    <div class="gothic-box rounded-2xl px-4 py-2.5 border border-stone-800 flex flex-wrap items-center justify-between gap-3 shadow-2xl">
+  <!-- PERSISTENT TOP AUDIO CONTROLLER -->
+  <div class="max-w-6xl mx-auto mb-6 sticky top-3 z-50">
+    <div class="glass-card rounded-2xl px-4 py-3 border border-amber-500/30 flex flex-wrap items-center justify-between gap-3 shadow-2xl">
       
-      <!-- Left: Audio status -->
       <div class="flex items-center gap-3">
-        <button id="bg-audio-toggle" onclick="toggleOST()" class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-600 to-amber-800 hover:from-amber-500 hover:to-amber-700 text-stone-950 flex items-center justify-center font-bold text-sm shadow transition duration-150">
+        <button id="bg-audio-toggle" onclick="toggleOST()" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-600 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-stone-950 flex items-center justify-center font-bold text-base shadow-lg shadow-amber-950 transition duration-150 border border-amber-400/40">
           <span id="bg-audio-icon">▶</span>
         </button>
         <div>
           <div class="flex items-center gap-2">
-            <span class="text-[11px] font-bold uppercase tracking-wider font-cinzel text-amber-400">Firelink Ambience</span>
-            <span class="text-[11px] text-stone-500 font-mono hidden sm:inline" id="bg-audio-status">(Click anywhere to play quiet background strings)</span>
+            <span class="text-xs font-bold uppercase tracking-wider font-cinzel text-amber-400">Firelink Shrine Ambience</span>
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            <span class="text-[11px] text-slate-400 font-mono hidden sm:inline" id="bg-audio-status">(Click anywhere to play quiet background strings)</span>
           </div>
           <div class="text-xs text-stone-300 font-medium">
-            Melancholic D-Minor Strings &bull; <span class="text-stone-500 text-[11px]">Soft tavern background</span>
+            Melancholic D-Minor Strings &bull; <span class="text-slate-400 text-[11px]">Subtle atmospheric volume</span>
           </div>
         </div>
       </div>
 
-      <!-- Right: Volume & Mute -->
       <div class="flex items-center gap-4 ml-auto">
-        <div id="flame-bars" class="flex items-end gap-1 h-4 px-1 opacity-40">
+        <div id="flame-bars" class="flex items-end gap-1 h-5 px-1 opacity-40">
           <span class="w-1 bg-amber-600 rounded-full h-1"></span>
           <span class="w-1 bg-amber-500 rounded-full h-2"></span>
           <span class="w-1 bg-amber-400 rounded-full h-3"></span>
@@ -100,13 +106,13 @@
           <span class="w-1 bg-amber-600 rounded-full h-2"></span>
         </div>
 
-        <div class="flex items-center gap-2 bg-stone-950/80 border border-stone-800/80 px-2.5 py-1 rounded-xl">
-          <span class="text-xs text-amber-500/70">🔥</span>
-          <input type="range" id="ost-volume" min="0" max="0.25" step="0.01" value="0.07" oninput="setVolume(this.value)" class="w-16 accent-amber-500 h-1 bg-stone-800 rounded cursor-pointer" />
-          <span class="text-[11px] font-mono text-amber-400/90 w-7 text-right" id="volume-pct">28%</span>
+        <div class="flex items-center gap-2 bg-stone-950/90 border border-stone-800 px-3 py-1.5 rounded-xl">
+          <span class="text-xs text-amber-400">🔥</span>
+          <input type="range" id="ost-volume" min="0" max="0.25" step="0.01" value="0.07" oninput="setVolume(this.value)" class="w-18 accent-amber-500 h-1 bg-stone-800 rounded cursor-pointer" title="Adjust Volume" />
+          <span class="text-[11px] font-mono text-amber-400 w-8 text-right" id="volume-pct">28%</span>
         </div>
 
-        <button onclick="toggleMute()" id="mute-btn" class="px-2.5 py-1 text-xs bg-stone-900 hover:bg-stone-800 text-stone-400 hover:text-stone-200 border border-stone-800 rounded-lg font-mono transition">
+        <button onclick="toggleMute()" id="mute-btn" class="px-3 py-1 text-xs bg-stone-900 hover:bg-stone-800 text-stone-400 hover:text-white border border-stone-800 rounded-lg font-mono transition">
           Mute
         </button>
       </div>
@@ -114,147 +120,179 @@
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto space-y-8">
+  <!-- HERO SECTION: THE BROTHERHOOD PITCH -->
+  <div class="max-w-6xl mx-auto space-y-9">
 
-    <!-- HEADER / PERSONAL MESSAGE FROM AHMED -->
-    <header class="gothic-box rounded-3xl p-6 md:p-10 border border-stone-800 relative overflow-hidden">
-      <!-- Dark subtle vignette -->
-      <div class="absolute -right-20 -top-20 w-64 h-64 bg-amber-700/10 rounded-full blur-3xl pointer-events-none"></div>
+    <header class="glass-card rounded-3xl p-7 md:p-12 relative overflow-hidden border border-amber-500/25">
+      <!-- Atmospheric Backdrop Glows -->
+      <div class="absolute -right-24 -top-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-rose-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="relative z-10 space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-800/80 pb-4">
+      <div class="relative z-10 space-y-5">
+        
+        <!-- Header Top Badge -->
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-800/80 pb-5">
           <div class="flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-stone-900 border border-amber-800/40 flex items-center justify-center text-amber-400 font-cinzel font-bold text-base">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-600 to-rose-700 flex items-center justify-center text-2xl shadow-lg shadow-amber-950 border border-amber-400/30">
               ⚔️
-            </span>
+            </div>
             <div>
-              <div class="text-xs font-mono text-amber-500 font-semibold tracking-wider uppercase">Personal Dossier</div>
-              <div class="text-sm font-bold text-stone-200">From Ahmed (ABO3OMDA) to Omar (GΞÐÕ)</div>
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 text-xs font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40 rounded uppercase tracking-wider">
+                  The Duo Protocol
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Ahmed (ABO3OMDA) & Omar (GΞÐÕ)</span>
+              </div>
+              <h2 class="text-lg md:text-xl font-bold font-cinzel text-white mt-0.5">
+                "Never One Without The Other" &bull; 2-Hour Gaming Plan
+              </h2>
             </div>
           </div>
-          <div class="px-3 py-1 bg-stone-900/90 border border-stone-800 rounded-full text-xs font-mono text-stone-400">
-            Ages 30 & 26 &bull; Target: 2 Hours After Work
+          <div class="px-3 py-1.5 bg-stone-900/90 border border-stone-800 rounded-xl text-xs font-mono text-amber-400 font-bold">
+            Ages 30 & 26 &bull; Work-Life Optimized
           </div>
         </div>
 
-        <div class="space-y-3 pt-2">
-          <h1 class="text-3xl md:text-5xl font-extrabold font-cinzel text-stone-100 leading-tight">
-            Omar, Look — Let’s Play This Smart.
+        <!-- Personal Hook from Ahmed -->
+        <div class="space-y-4 pt-2 max-w-3xl">
+          <h1 class="text-3xl md:text-5xl font-extrabold font-cinzel text-white leading-tight">
+            Omar, Look — Let’s Conquer <br/>
+            <span class="glow-gold-text font-cinzel-dec">A New Realm Together.</span>
           </h1>
-          
-          <p class="text-stone-300 text-sm md:text-base leading-relaxed">
-            You’re 26, I’m 30. We’ve both got work tomorrow and real-life responsibilities. We aren't in high school anymore where we can sit for 8 hours grinding boring dailies or waiting around for randoms to group up. 
+
+          <p class="text-stone-300 text-base md:text-lg leading-relaxed font-normal">
+            You’re 26, I’m 30. We both work and have real-life responsibilities. We can’t sit for 8 hours grinding boring dailies or waiting around for randoms to group up. 
+            We need an adventure that gives us <strong class="text-amber-400 font-bold">maximum adrenaline in 2 hours after work</strong> with zero wasted time and zero gear resets.
           </p>
 
           <p class="text-stone-300 text-sm md:text-base leading-relaxed">
-            I put this page together because I really want us to conquer a new game together as a duo, but <strong class="text-amber-400">zero bullshit and zero burnout</strong>. Here is the realistic plan:
+            Here is our exact 3-step master plan:
           </p>
         </div>
 
-        <!-- The 3 Practical Steps (Human brother talk) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 text-left">
+        <!-- 3 Strategy Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3 text-left">
           
-          <div class="bg-stone-950/70 border border-stone-800/90 rounded-2xl p-4 card-hover">
-            <div class="text-amber-500 font-mono text-xs font-bold uppercase mb-1">Step 1 &bull; Month 1</div>
-            <div class="text-stone-100 font-bold font-cinzel text-base flex items-center gap-2">
-              <span>🚀</span> Day-1 Rush: Aion 2
+          <div class="glass-card rounded-2xl p-5 border border-cyan-500/30 card-glow-hover">
+            <div class="text-cyan-400 font-mono text-xs font-bold uppercase mb-1">Phase 1 &bull; Month 1</div>
+            <div class="text-white font-bold font-cinzel text-base flex items-center gap-2">
+              <span>🪽</span> Day-1 Rush: Aion 2
             </div>
-            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
-              We ride the launch wave together. UE5 graphics, aerial combat, fresh server economy. Everyone is learning, world PvP is popping, and nobody has pay-to-win gear yet.
+            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
+              We ride the launch wave together on <strong>October 5, 2026</strong>. UE5 graphics, aerial wings combat, fresh economy, and open-world guild battles. Pure chaos and fun.
             </p>
           </div>
 
-          <div class="bg-stone-950/70 border border-stone-800/90 rounded-2xl p-4 card-hover">
-            <div class="text-red-400 font-mono text-xs font-bold uppercase mb-1">Step 2 &bull; Day 30 Check-in</div>
-            <div class="text-stone-100 font-bold font-cinzel text-base flex items-center gap-2">
-              <span>⚖️</span> The Honest Assessment
+          <div class="glass-card rounded-2xl p-5 border border-amber-500/30 card-glow-hover">
+            <div class="text-amber-400 font-mono text-xs font-bold uppercase mb-1">Day 30 Checkpoint</div>
+            <div class="text-white font-bold font-cinzel text-base flex items-center gap-2">
+              <span>⚖️</span> The BS Filter Test
             </div>
-            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
-              At day 30, we ask: Is NCSoft getting greedy with pay-to-win? Are dailies feeling like a second job? If yes &rarr; we cash out immediately with zero regrets.
+            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
+              At day 30, we sit on Discord: Is NCSoft turning it into a pay-to-win chore? If yes &rarr; we extract cleanly with zero regrets and zero sunk-cost guilt.
             </p>
           </div>
 
-          <div class="bg-stone-950/70 border border-stone-800/90 rounded-2xl p-4 card-hover">
-            <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-1">Step 3 &bull; The Safety Net</div>
-            <div class="text-stone-100 font-bold font-cinzel text-base flex items-center gap-2">
+          <div class="glass-card rounded-2xl p-5 border border-emerald-500/30 card-glow-hover">
+            <div class="text-emerald-400 font-mono text-xs font-bold uppercase mb-1">Phase 2 &bull; The Safety Net</div>
+            <div class="text-white font-bold font-cinzel text-base flex items-center gap-2">
               <span>🛡️</span> Guild Wars 2
             </div>
-            <p class="text-xs text-stone-400 mt-2 leading-relaxed">
-              Our permanent fallback. Zero gear treadmill. Ascended gear you craft is Best-in-Slot forever. Active dodge combat, great mounts, and instant action in 2-hour sessions.
+            <p class="text-xs text-stone-300 mt-2 leading-relaxed">
+              Our permanent home. Zero gear treadmill. Ascended gear you craft is Best-in-Slot forever. Active dodge combat, world-class mounts, and instant action in 2 hours.
             </p>
           </div>
 
         </div>
+
       </div>
     </header>
 
-    <!-- SECTION 1: THE THREE GAMES (AHMED'S HONEST TAKE) -->
-    <section class="space-y-4">
-      <div class="flex items-center justify-between px-1">
+    <!-- SECTION 1: THE 3 GAMES SHOWCASE (HIGH-PRODUCTION REAL KEY ART) -->
+    <section class="space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-1">
         <div>
-          <h2 class="text-xl md:text-2xl font-bold font-cinzel text-stone-100">My Breakdown of The Contenders</h2>
-          <p class="text-xs md:text-sm text-stone-400">No corporate marketing speak — just what each game actually means for our 2 hours/day.</p>
+          <h2 class="text-2xl md:text-3xl font-bold font-cinzel text-white">The Three Contenders</h2>
+          <p class="text-xs md:text-sm text-stone-400">Actual game graphics, real mechanics, and my honest verdict for our 2-hour evenings.</p>
         </div>
+        <span class="px-3 py-1 bg-stone-900 border border-stone-800 rounded-full text-xs font-mono text-stone-400">
+          Click cards to inspect
+        </span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         <!-- GAME 1: AION 2 -->
-        <div class="gothic-box card-hover rounded-3xl overflow-hidden flex flex-col border border-stone-800">
+        <div class="glass-card card-glow-hover rounded-3xl overflow-hidden flex flex-col border border-cyan-500/40 shadow-xl shadow-cyan-950/20">
           
-          <!-- Banner -->
-          <div class="h-44 relative bg-stone-950 overflow-hidden flex items-center justify-center">
-            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261430/header.jpg" 
-                 alt="Aion" 
-                 class="w-full h-full object-cover opacity-50 hover:opacity-75 transition duration-500" 
-                 onerror="this.style.display='none';" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121217] via-transparent to-black/60"></div>
+          <!-- Cinematic Header with Real Aion 2 Artwork -->
+          <div class="h-56 relative bg-stone-950 overflow-hidden group">
+            <img src="assets/aion2_clean.jpg" 
+                 alt="Aion 2 Key Art" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" 
+                 onerror="this.src='https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261430/header.jpg';" />
             
-            <div class="absolute top-3 left-3">
-              <span class="px-2.5 py-0.5 bg-stone-900/90 border border-amber-800/50 text-amber-400 font-mono text-[11px] font-bold rounded uppercase">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1118] via-transparent to-black/60"></div>
+            
+            <div class="absolute top-3 left-3 flex items-center gap-2 z-10">
+              <span class="px-2.5 py-1 bg-cyan-500 text-black font-extrabold text-[11px] font-mono rounded uppercase tracking-wider shadow-md">
                 Launch Priority
+              </span>
+              <span class="px-2 py-0.5 bg-stone-900/90 border border-cyan-500/40 text-cyan-300 font-mono text-[10px] rounded">
+                Unreal Engine 5
               </span>
             </div>
 
-            <div class="absolute bottom-3 left-4 right-4">
-              <h3 class="text-2xl font-bold font-cinzel text-stone-100">Aion 2</h3>
-              <p class="text-xs font-mono text-stone-400">Unreal Engine 5 &bull; Aerial Combat</p>
+            <div class="absolute top-3 right-3 z-10">
+              <span class="px-2.5 py-1 bg-stone-900/90 border border-amber-500/50 text-amber-400 font-mono text-[11px] font-bold rounded shadow">
+                Launch: Oct 5, 2026
+              </span>
+            </div>
+
+            <div class="absolute bottom-3 left-4 right-4 z-10">
+              <h3 class="text-2xl font-bold font-cinzel text-white drop-shadow-md">Aion 2</h3>
+              <p class="text-xs font-mono text-cyan-300">Aerial Wings Combat &bull; High-Stakes PvP</p>
             </div>
           </div>
 
           <!-- Content -->
-          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
             <div>
-              <div class="text-xs font-bold text-amber-500 font-mono mb-1">Ahmed's Take:</div>
+              <div class="flex items-center justify-between text-xs font-mono mb-2">
+                <span class="text-cyan-400 font-bold">Ahmed's Take:</span>
+                <span class="text-stone-400">Month 1 Adrenaline</span>
+              </div>
               <p class="text-xs md:text-sm text-stone-300 leading-relaxed">
-                Nothing beats an MMO launch day with your brother. Everyone starting from level 1, learning boss mechanics together, and open-world PvP in the Abyss. NCSoft might get greedy later on, but Month 1 is going to be peak fun. We should definitely be there Day 1.
+                Omar, look at the graphics. The dual winged heroines, the Elyos vs. Asmodian war, unrestricted flight in the Abyss, and open-world contested bosses like our old Albion days. NCSoft might push microtransactions down the road, but **Day-1 launch month is pure gold**. We play it hard for 30 days while the hype is at its peak.
               </p>
             </div>
 
-            <div class="space-y-2 border-y border-stone-800/70 py-3 text-xs">
+            <!-- Stats Table -->
+            <div class="space-y-2 border-y border-stone-800/80 py-3 text-xs">
               <div class="flex justify-between">
-                <span class="text-stone-400">Launch Wave Fun:</span>
-                <span class="text-amber-400 font-bold font-mono">10 / 10</span>
+                <span class="text-stone-400 font-mono">Launch Fun:</span>
+                <span class="text-amber-400 font-bold font-mono">10 / 10 (Peak Hype)</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Combat Style:</span>
-                <span class="text-stone-200 font-mono">Full 3D Flight & Combo chains</span>
+                <span class="text-stone-400 font-mono">Combat System:</span>
+                <span class="text-stone-200 font-mono">Full 3D Aerial Combos</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">P2W Risk:</span>
-                <span class="text-red-400 font-mono font-bold">High (NCSoft history)</span>
+                <span class="text-stone-400 font-mono">P2W Risk:</span>
+                <span class="text-red-400 font-bold font-mono">High (Re-evaluate at Day 30)</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Our Strategy:</span>
-                <span class="text-stone-200 font-mono">Push hard month 1, then check</span>
+                <span class="text-stone-400 font-mono">The Plan:</span>
+                <span class="text-cyan-300 font-mono font-bold">Duo Push at Launch</span>
               </div>
             </div>
 
+            <!-- Action Links -->
             <div class="flex gap-2 pt-1">
-              <a href="https://aion2.plaync.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 bg-stone-900 hover:bg-amber-700 hover:text-stone-950 text-amber-400 font-cinzel font-bold text-xs rounded-xl text-center border border-amber-900/40 transition">
-                Official Site
+              <a href="https://aion2.plaync.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-black font-cinzel font-bold text-xs rounded-xl text-center shadow-lg transition">
+                Official Realm
               </a>
-              <a href="https://www.youtube.com/watch?v=JhRhyn-SgtA" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-stone-900 hover:bg-stone-800 text-stone-400 hover:text-stone-200 rounded-xl text-xs font-mono border border-stone-800 transition flex items-center gap-1">
+              <a href="https://www.youtube.com/watch?v=JhRhyn-SgtA" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 bg-stone-900 hover:bg-stone-800 text-cyan-300 rounded-xl text-xs font-mono border border-cyan-500/30 transition flex items-center gap-1">
                 <span>OST</span>
                 <span>↗</span>
               </a>
@@ -263,67 +301,73 @@
         </div>
 
         <!-- GAME 2: GUILD WARS 2 (RECOMMENDED FALLBACK) -->
-        <div class="gothic-box card-hover rounded-3xl overflow-hidden flex flex-col border-2 border-amber-700/40 relative shadow-xl">
+        <div class="glass-card card-glow-hover rounded-3xl overflow-hidden flex flex-col border-2 border-emerald-500/50 relative shadow-2xl shadow-emerald-950/20">
           
           <div class="absolute top-3 right-3 z-20">
-            <span class="px-2.5 py-0.5 bg-amber-600 text-stone-950 font-cinzel font-bold text-[10px] rounded uppercase tracking-wider shadow">
-              My Top Pick for Us
+            <span class="px-2.5 py-1 bg-emerald-500 text-black font-cinzel font-bold text-[11px] rounded uppercase tracking-wider shadow-lg flex items-center gap-1">
+              <span>👑</span> Ahmed's Top Pick
             </span>
           </div>
 
-          <!-- Banner -->
-          <div class="h-44 relative bg-stone-950 overflow-hidden flex items-center justify-center">
-            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1284210/header.jpg" 
-                 alt="Guild Wars 2" 
-                 class="w-full h-full object-cover opacity-60 hover:opacity-80 transition duration-500" 
-                 onerror="this.style.display='none';" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121217] via-transparent to-black/60"></div>
+          <!-- Cinematic Header with Real GW2 Artwork -->
+          <div class="h-56 relative bg-stone-950 overflow-hidden group">
+            <img src="assets/gw2_official.jpg" 
+                 alt="Guild Wars 2 Key Art" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" 
+                 onerror="this.src='https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1284210/capsule_616x353.jpg';" />
             
-            <div class="absolute top-3 left-3">
-              <span class="px-2.5 py-0.5 bg-stone-900/90 border border-emerald-800/50 text-emerald-400 font-mono text-[11px] font-bold rounded uppercase">
-                Fallback A
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1118] via-transparent to-black/60"></div>
+            
+            <div class="absolute top-3 left-3 z-10">
+              <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono text-[11px] font-bold rounded uppercase">
+                Fallback A: Sanctuary
               </span>
             </div>
 
-            <div class="absolute bottom-3 left-4 right-4">
-              <h3 class="text-2xl font-bold font-cinzel text-stone-100">Guild Wars 2</h3>
+            <div class="absolute bottom-3 left-4 right-4 z-10">
+              <h3 class="text-2xl font-bold font-cinzel text-white drop-shadow-md">Guild Wars 2</h3>
               <p class="text-xs font-mono text-emerald-400">Zero Gear Treadmill &bull; Souls-Like Dodge</p>
             </div>
           </div>
 
           <!-- Content -->
-          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
             <div>
-              <div class="text-xs font-bold text-emerald-400 font-mono mb-1">Ahmed's Take:</div>
+              <div class="flex items-center justify-between text-xs font-mono mb-2">
+                <span class="text-emerald-400 font-bold">Ahmed's Take:</span>
+                <span class="text-stone-400">Best Respect For Time</span>
+              </div>
               <p class="text-xs md:text-sm text-stone-300 leading-relaxed">
-                Omar, this is genuinely the best adult-gamer MMO ever created. Once you forge an Ascended gear set, it stays Best-in-Slot forever. No expansions wipe your progress. You log in at 8:15 PM, do high-level Fractals or WvW territory fights, and you log off without feeling behind. Plus the mount physics (drifting beetles & diving griffons) are top-tier.
+                Omar, this is the crowned king for working adults. Once you forge an Ascended weapon or armor set, **it is permanently Best-in-Slot forever**. New expansions add new story and zones, but NEVER reset your stats. You log in at 8:15 PM, do high-level Fractals, jump into World vs World siege fights, and log off before 10:30 PM feeling accomplished.
               </p>
             </div>
 
-            <div class="space-y-2 border-y border-stone-800/70 py-3 text-xs">
+            <!-- Stats Table -->
+            <div class="space-y-2 border-y border-stone-800/80 py-3 text-xs">
               <div class="flex justify-between">
-                <span class="text-stone-400">Respect for 2h/Day:</span>
+                <span class="text-stone-400 font-mono">Respect for 2h/Day:</span>
                 <span class="text-emerald-400 font-bold font-mono">10 / 10 (Instant Waypoints)</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Gear Invalidation:</span>
-                <span class="text-emerald-400 font-bold font-mono">0% (Forever BiS)</span>
+                <span class="text-stone-400 font-mono">Gear Invalidation:</span>
+                <span class="text-emerald-400 font-bold font-mono">0% (Ascended is Forever)</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Pay-to-Win:</span>
-                <span class="text-emerald-400 font-mono">Zero (Cosmetics & Storage only)</span>
+                <span class="text-stone-400 font-mono">P2W Cash Shop:</span>
+                <span class="text-emerald-400 font-mono">Zero (Cosmetics & QoL only)</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Take a 2-Month Break?</span>
-                <span class="text-stone-200 font-mono">Log in, still max power</span>
+                <span class="text-stone-400 font-mono">Take a 2-Month Break?</span>
+                <span class="text-white font-mono font-bold">Come back, still max power</span>
               </div>
             </div>
 
+            <!-- Action Links -->
             <div class="flex gap-2 pt-1">
-              <a href="https://www.guildwars2.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 bg-gradient-to-r from-amber-700 to-amber-800 hover:from-amber-600 text-stone-100 font-cinzel font-bold text-xs rounded-xl text-center transition border border-amber-600/40">
-                Official Site
+              <a href="https://www.guildwars2.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-black font-cinzel font-bold text-xs rounded-xl text-center shadow-lg transition">
+                Official Realm
               </a>
-              <a href="https://www.youtube.com/watch?v=k1tU3094_aY" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-stone-900 hover:bg-stone-800 text-stone-400 hover:text-stone-200 rounded-xl text-xs font-mono border border-stone-800 transition flex items-center gap-1">
+              <a href="https://www.youtube.com/watch?v=k1tU3094_aY" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 bg-stone-900 hover:bg-stone-800 text-emerald-300 rounded-xl text-xs font-mono border border-emerald-500/30 transition flex items-center gap-1">
                 <span>OST</span>
                 <span>↗</span>
               </a>
@@ -332,60 +376,67 @@
         </div>
 
         <!-- GAME 3: WOW: FOREVER -->
-        <div class="gothic-box card-hover rounded-3xl overflow-hidden flex flex-col border border-stone-800">
+        <div class="glass-card card-glow-hover rounded-3xl overflow-hidden flex flex-col border border-amber-500/35 shadow-xl shadow-amber-950/20">
           
-          <!-- Banner -->
-          <div class="h-44 relative bg-stone-950 overflow-hidden flex items-center justify-center">
-            <div class="w-20 h-20 rounded-full bg-stone-900/80 border border-stone-800 flex items-center justify-center text-amber-500 font-bold text-2xl">
-              ⚔️
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121217] via-transparent to-black/60"></div>
+          <!-- Cinematic Header with Real WoW: Forever Artwork -->
+          <div class="h-56 relative bg-stone-950 overflow-hidden group">
+            <img src="assets/wow_forever_clean.png" 
+                 alt="World of Warcraft Forever Key Art" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" 
+                 onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/eb/WoW_icon.svg';" />
             
-            <div class="absolute top-3 left-3">
-              <span class="px-2.5 py-0.5 bg-stone-900/90 border border-stone-800 text-stone-400 font-mono text-[11px] font-bold rounded uppercase">
-                Fallback B
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f1118] via-transparent to-black/60"></div>
+            
+            <div class="absolute top-3 left-3 z-10">
+              <span class="px-2.5 py-1 bg-amber-500 text-black font-mono text-[11px] font-bold rounded uppercase shadow-md">
+                Fallback B: Nostalgia
               </span>
             </div>
 
-            <div class="absolute bottom-3 left-4 right-4">
-              <h3 class="text-2xl font-bold font-cinzel text-stone-100">WoW: Forever</h3>
-              <p class="text-xs font-mono text-stone-400">Permanent Level 60 &bull; Classic Era</p>
+            <div class="absolute bottom-3 left-4 right-4 z-10">
+              <h3 class="text-2xl font-bold font-cinzel text-white drop-shadow-md">WoW: Forever</h3>
+              <p class="text-xs font-mono text-amber-300">Permanent Level 60 &bull; Classic Era Reimagined</p>
             </div>
           </div>
 
           <!-- Content -->
-          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
             <div>
-              <div class="text-xs font-bold text-amber-500 font-mono mb-1">Ahmed's Take:</div>
+              <div class="flex items-center justify-between text-xs font-mono mb-2">
+                <span class="text-amber-400 font-bold">Ahmed's Take:</span>
+                <span class="text-stone-400">Classic Attrition</span>
+              </div>
               <p class="text-xs md:text-sm text-stone-300 leading-relaxed">
-                The permanent Level 60 cap solves the expansion level wipe, and the world atmosphere is classic. But remember how slow Classic WoW is: slow flight paths, farming consumables, and whispering people for dungeons burns 45 minutes of a 2-hour session. Plus Blizzard is charging $30 for elf race packs now.
+                The permanent Level 60 cap prevents expansion stat wipes, and the art/atmosphere in "Carve A New Path" looks great. But remember how slow Classic WoW really is: slow flight paths, farming consumables, and forming dungeon groups burns 45 minutes of our 2-hour session. Plus Blizzard is charging $30 for elf race packs now.
               </p>
             </div>
 
-            <div class="space-y-2 border-y border-stone-800/70 py-3 text-xs">
+            <!-- Stats Table -->
+            <div class="space-y-2 border-y border-stone-800/80 py-3 text-xs">
               <div class="flex justify-between">
-                <span class="text-stone-400">Respect for 2h/Day:</span>
-                <span class="text-amber-500 font-bold font-mono">5 / 10 (Slow logistics)</span>
+                <span class="text-stone-400 font-mono">Respect for 2h/Day:</span>
+                <span class="text-amber-400 font-bold font-mono">5 / 10 (Slow Travel)</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Travel & Prep:</span>
-                <span class="text-red-400 font-mono font-bold">45–60 min / evening</span>
+                <span class="text-stone-400 font-mono">Travel & Logistics:</span>
+                <span class="text-red-400 font-bold font-mono">45–60 min / evening</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Gear Progression:</span>
-                <span class="text-stone-200 font-mono">Vertical Raid Tiers</span>
+                <span class="text-stone-400 font-mono">Progression:</span>
+                <span class="text-stone-200 font-mono">Vertical Raid Tier Ladders</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-stone-400">Store Monetization:</span>
+                <span class="text-stone-400 font-mono">Store Paywall:</span>
                 <span class="text-red-400 font-mono font-bold">Paid $30 Skyborne Pack</span>
               </div>
             </div>
 
+            <!-- Action Links -->
             <div class="flex gap-2 pt-1">
-              <a href="https://worldofwarcraft.blizzard.com" target="_blank" rel="noopener noreferrer" class="flex-1 py-2 bg-stone-900 hover:bg-stone-800 text-stone-300 font-cinzel font-bold text-xs rounded-xl text-center border border-stone-800 transition">
-                Official Site
+              <a href="https://worldofwarcraft.blizzard.com/en-us/forever" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-black font-cinzel font-bold text-xs rounded-xl text-center shadow-lg transition">
+                Official Realm
               </a>
-              <a href="https://www.youtube.com/watch?v=800be1ZmGd0" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-stone-900 hover:bg-stone-800 text-stone-400 hover:text-stone-200 rounded-xl text-xs font-mono border border-stone-800 transition flex items-center gap-1">
+              <a href="https://www.youtube.com/watch?v=800be1ZmGd0" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 bg-stone-900 hover:bg-stone-800 text-amber-300 rounded-xl text-xs font-mono border border-amber-500/30 transition flex items-center gap-1">
                 <span>OST</span>
                 <span>↗</span>
               </a>
@@ -396,66 +447,70 @@
       </div>
     </section>
 
-    <!-- SECTION 2: THE 8 PM TO 10 PM REALITY TEST -->
-    <section class="gothic-box rounded-3xl p-6 md:p-8 border border-stone-800 space-y-6">
+    <!-- SECTION 2: THE 8:00 PM TO 10:00 PM REALITY TEST (INTERACTIVE SLIDER) -->
+    <section class="glass-card rounded-3xl p-6 md:p-8 border border-amber-500/25 space-y-6">
       <div>
-        <h2 class="text-xl md:text-2xl font-bold font-cinzel text-stone-100">The 8:00 PM to 10:00 PM Test</h2>
-        <p class="text-stone-400 text-xs md:text-sm">We log in after dinner and log off before bed. How much of our evening is actually spent playing the game?</p>
+        <h2 class="text-2xl md:text-3xl font-bold font-cinzel text-white">The 8:00 PM to 10:00 PM Workday Test</h2>
+        <p class="text-xs md:text-sm text-stone-400 mt-1">
+          We log in after dinner and log off before bed. How much of our evening is spent fighting bosses vs. traveling?
+        </p>
       </div>
 
-      <!-- Interactive Slider -->
-      <div class="bg-stone-950/80 p-4 rounded-2xl border border-stone-800/80 space-y-3">
+      <div class="bg-stone-950/80 p-5 rounded-2xl border border-stone-800 space-y-3">
         <div class="flex items-center justify-between">
-          <label for="time-slider" class="text-xs md:text-sm font-bold text-stone-200 flex items-center gap-2 font-mono">
+          <label for="time-slider" class="text-sm font-bold text-white flex items-center gap-2 font-mono">
             <span>⏱️ Workday Playtime:</span>
             <span id="slider-val" class="text-amber-400 font-extrabold text-base">2.0 Hours (120 min)</span>
           </label>
-          <span class="text-xs text-stone-500 font-mono">Drag to test</span>
+          <span class="text-xs text-stone-500 font-mono">Drag slider to test</span>
         </div>
         <input type="range" id="time-slider" min="1" max="4" step="0.5" value="2" oninput="updateSimulator(this.value)" class="w-full accent-amber-500 bg-stone-800 h-2 rounded-lg cursor-pointer" />
       </div>
 
-      <!-- Real Comparison -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- GW2 -->
-        <div class="bg-stone-950/90 border border-emerald-900/40 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center justify-between border-b border-stone-800 pb-2.5">
-            <h4 class="font-bold font-cinzel text-stone-100 text-sm md:text-base">In Guild Wars 2</h4>
-            <span class="text-xs font-mono text-emerald-400 font-bold">~90% Real Combat</span>
+        <div class="bg-stone-950/90 border border-emerald-500/40 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-stone-800 pb-3">
+            <h4 class="font-bold font-cinzel text-white text-base">In Guild Wars 2</h4>
+            <span class="text-xs font-mono text-emerald-400 font-bold px-2 py-0.5 bg-emerald-950 border border-emerald-500/30 rounded">
+              ~90% Pure Combat
+            </span>
           </div>
           
           <div class="space-y-2 text-xs">
-            <div class="flex justify-between text-stone-300 font-mono">
-              <span>⚔️ Bosses, Fractals, WvW:</span>
-              <span id="gw2-action" class="font-bold text-emerald-400">105 mins</span>
+            <div class="flex justify-between text-stone-200 font-mono font-bold">
+              <span>⚔️ Boss Fights, Fractals, WvW:</span>
+              <span id="gw2-action" class="text-emerald-400">105 mins</span>
             </div>
-            <div class="w-full bg-stone-900 h-2 rounded-full overflow-hidden">
+            <div class="w-full bg-stone-900 h-2.5 rounded-full overflow-hidden border border-stone-800">
               <div class="bg-emerald-500 h-full w-[88%]"></div>
             </div>
             <div class="flex justify-between text-stone-500 font-mono text-[11px]">
-              <span>🏃 Waypoints & Finding Group:</span>
+              <span>🏃 Waypoints & Group Forming:</span>
               <span id="gw2-travel">15 mins</span>
             </div>
           </div>
-          <p class="text-xs text-stone-400 leading-relaxed pt-1">
-            You waypoint directly to the map, join an active squad in 2 minutes, kill a dragon world boss, do dailies with me, and log off feeling satisfied.
+          <p class="text-xs text-stone-300 leading-relaxed pt-1">
+            💡 You waypoint instantly to the boss, join an active squad in 2 minutes, kill world bosses, and log off feeling accomplished.
           </p>
         </div>
 
         <!-- WoW -->
-        <div class="bg-stone-950/90 border border-amber-900/40 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center justify-between border-b border-stone-800 pb-2.5">
-            <h4 class="font-bold font-cinzel text-stone-100 text-sm md:text-base">In WoW: Forever</h4>
-            <span class="text-xs font-mono text-amber-400 font-bold">~50% Combat</span>
+        <div class="bg-stone-950/90 border border-amber-500/40 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-stone-800 pb-3">
+            <h4 class="font-bold font-cinzel text-white text-base">In WoW: Forever</h4>
+            <span class="text-xs font-mono text-amber-400 font-bold px-2 py-0.5 bg-amber-950 border border-amber-500/30 rounded">
+              ~50% Combat Action
+            </span>
           </div>
           
           <div class="space-y-2 text-xs">
-            <div class="flex justify-between text-stone-300 font-mono">
-              <span>⚔️ Dungeon Combat:</span>
-              <span id="wow-action" class="font-bold text-amber-400">65 mins</span>
+            <div class="flex justify-between text-stone-200 font-mono font-bold">
+              <span>⚔️ Dungeon & Raid Combat:</span>
+              <span id="wow-action" class="text-amber-400">65 mins</span>
             </div>
-            <div class="w-full bg-stone-900 h-2 rounded-full overflow-hidden">
+            <div class="w-full bg-stone-900 h-2.5 rounded-full overflow-hidden border border-stone-800">
               <div class="bg-amber-500 h-full w-[54%]"></div>
             </div>
             <div class="flex justify-between text-red-400 font-mono text-[11px]">
@@ -463,8 +518,8 @@
               <span id="wow-travel">55 mins</span>
             </div>
           </div>
-          <p class="text-xs text-stone-400 leading-relaxed pt-1">
-            If your tank leaves after 1 wipe or you spend 35 minutes traveling to Blackrock Mountain, the entire evening is gone before finishing the run.
+          <p class="text-xs text-stone-300 leading-relaxed pt-1">
+            ⚠️ If your tank leaves after 1 wipe or you spend 35 minutes traveling to the summoning stone, your entire evening is burned before pulling the boss.
           </p>
         </div>
 
@@ -472,65 +527,65 @@
     </section>
 
     <!-- SECTION 3: THE BRO PACT (AHMED & OMAR) -->
-    <section class="gothic-box rounded-3xl p-6 md:p-10 border border-stone-800 text-center max-w-2xl mx-auto shadow-2xl space-y-6">
-      <div class="w-14 h-14 rounded-2xl bg-stone-900 border border-amber-800/40 flex items-center justify-center text-2xl mx-auto shadow-inner text-amber-400">
+    <section class="glass-card rounded-3xl p-7 md:p-10 border border-amber-500/30 text-center max-w-2xl mx-auto shadow-2xl space-y-6">
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-600 to-rose-700 flex items-center justify-center text-3xl mx-auto shadow-lg shadow-amber-950 border border-amber-400/40">
         📜
       </div>
 
       <div>
-        <h2 class="text-2xl md:text-3xl font-bold font-cinzel text-stone-100">The Brother Pact</h2>
-        <p class="text-stone-400 text-xs md:text-sm mt-1">Ahmed (ABO3OMDA) & Omar (GΞÐÕ) &bull; Our Ground Rules</p>
+        <h2 class="text-2xl md:text-3xl font-bold font-cinzel text-white">The Brother Pact</h2>
+        <p class="text-stone-400 text-xs md:text-sm mt-1">Ahmed (ABO3OMDA) & Omar (GΞÐÕ) &bull; Official Co-op Treaty</p>
       </div>
 
-      <!-- The Rules -->
-      <div class="text-left bg-stone-950/80 border border-stone-800/80 rounded-2xl p-5 space-y-3 font-mono text-xs text-stone-300">
-        <div class="flex items-start gap-2.5">
-          <span class="text-amber-500 font-bold">1.</span>
-          <span>We deploy on <strong>Aion 2 Launch Day</strong> together as a duo. We level together and have fun exploring the launch hype.</span>
+      <div class="text-left bg-stone-950 border border-stone-800 rounded-2xl p-5 space-y-3.5 font-mono text-xs text-stone-300">
+        <div class="flex items-start gap-3">
+          <span class="text-amber-400 font-bold">01.</span>
+          <span>We deploy on <strong>Aion 2 Launch Day (October 5, 2026)</strong> together as a duo, level up, and conquer the launch wave.</span>
         </div>
-        <div class="flex items-start gap-2.5">
-          <span class="text-amber-500 font-bold">2.</span>
-          <span>Workday sessions are capped at <strong>~2 hours</strong>. Real life and work always come first. Zero chore-burnout.</span>
+        <div class="flex items-start gap-3">
+          <span class="text-amber-400 font-bold">02.</span>
+          <span>Workday playtime is capped at <strong>~2 hours</strong>. Real life and careers always come first. Zero chore-burnout.</span>
         </div>
-        <div class="flex items-start gap-2.5">
-          <span class="text-amber-500 font-bold">3.</span>
-          <span>At <strong>Day 30</strong>, we hold an honest check-in. If Aion 2 turns predatory or demands endless grind, we pivot to <strong>Guild Wars 2</strong> with zero hesitation.</span>
+        <div class="flex items-start gap-3">
+          <span class="text-amber-400 font-bold">03.</span>
+          <span>At <strong>Day 30</strong>, we hold an honest check-in. If Aion 2 demands chore slavery or aggressive P2W, we extract cleanly to <strong>Guild Wars 2</strong> with zero regrets.</span>
         </div>
       </div>
 
-      <!-- Action -->
       <div id="pledge-form" class="space-y-4">
-        <button onclick="signPact()" class="px-8 py-3 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 hover:from-amber-600 hover:to-amber-700 text-stone-950 font-cinzel font-bold text-xs uppercase tracking-widest rounded-xl transition duration-200 shadow-xl shadow-amber-950 border border-amber-500/40">
+        <button onclick="signPact()" class="px-8 py-3.5 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-stone-950 font-cinzel font-bold text-xs uppercase tracking-widest rounded-xl transition duration-200 shadow-xl shadow-amber-950 border border-amber-400/40">
           Confirm Duo with Ahmed ⚔️
         </button>
         <p class="text-[11px] text-stone-500 font-mono">"Never one without the other." Zero P2W nonsense.</p>
       </div>
 
-      <!-- Confirmation Screen -->
-      <div id="pledge-confirmed" class="hidden p-6 bg-stone-950 border border-amber-600/50 rounded-2xl text-center space-y-2">
-        <div class="text-2xl">⚔️ 🛡️ 🩸</div>
-        <h4 class="text-lg font-bold text-stone-100 font-cinzel">Duo Confirmed!</h4>
-        <p class="text-xs text-amber-400 font-mono">
+      <div id="pledge-confirmed" class="hidden p-6 bg-stone-950 border border-amber-500/50 rounded-2xl text-center space-y-3">
+        <div class="text-3xl">⚔️ 🛡️ 🩸</div>
+        <h4 class="text-xl font-bold text-white font-cinzel">Duo Confirmed!</h4>
+        <p class="text-sm text-amber-400 font-mono">
           Ahmed (ABO3OMDA) & Omar (GΞÐÕ) are officially locked in for Day 1.
         </p>
+        <div class="inline-block px-4 py-1 bg-amber-500/20 border border-amber-500/40 rounded-full text-xs font-mono text-amber-300">
+          Status: Ready for Launch &bull; October 5, 2026
+        </div>
       </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="text-center py-6 text-xs text-stone-600 font-mono space-y-1">
+    <footer class="text-center py-7 text-xs text-stone-500 font-mono space-y-2">
       <p>Handcrafted by Ahmed (ABO3OMDA) for Omar (GΞÐÕ) &bull; Work-Life &bull; Zero Regrets</p>
-      <div class="flex items-center justify-center gap-3 text-stone-500 pt-1">
-        <a href="https://aion2.plaync.com" target="_blank" class="hover:text-amber-400">Aion 2</a>
+      <div class="flex items-center justify-center gap-4 text-stone-400">
+        <a href="https://aion2.plaync.com" target="_blank" class="hover:text-cyan-400">Aion 2</a>
         <span>&bull;</span>
         <a href="https://www.guildwars2.com" target="_blank" class="hover:text-emerald-400">Guild Wars 2</a>
         <span>&bull;</span>
-        <a href="https://worldofwarcraft.blizzard.com" target="_blank" class="hover:text-amber-500">WoW: Forever</a>
+        <a href="https://worldofwarcraft.blizzard.com/en-us/forever" target="_blank" class="hover:text-amber-400">WoW: Forever</a>
       </div>
     </footer>
 
   </div>
 
-  <!-- FIRELINK STRINGS AMBIENT ENGINE & SCRIPT -->
+  <!-- WEBAUDIO AMBIENT SCRIPT -->
   <script>
     function updateSimulator(hours) {
       const totalMinutes = Math.round(hours * 60);
@@ -552,7 +607,6 @@
       document.getElementById('pledge-confirmed').classList.remove('hidden');
     }
 
-    // WEBAUDIO AMBIENT ENGINE: Soft melancholic Dm -> Bb -> F -> C
     let audioCtx = null;
     let isPlaying = false;
     let synthTimer = null;
@@ -690,7 +744,6 @@
       }
     }
 
-    // Auto-start on first interaction
     let userClicked = false;
     function handleFirstClick() {
       if (!userClicked) {
